@@ -13,8 +13,9 @@ echo 'surrealmemes\nprogrammingmemes' > ~/wallpaper/subreddits.txt
 # location of main script
 location=$(readlink -f ~/wallpaper/run-wallpaper.sh)
 
-# download main script
-# curl ...
+# download main scripts
+curl -fsSL https://raw.githubusercontent.com/KindaOK/MacDesktopChanger/master/shell-wallpaper.sh > ~/wallpaper/shell-wallpaper.sh
+curl -fsSL https://raw.githubusercontent.com/KindaOK/MacDesktopChanger/master/run-wallpaper.sh > ~/wallpaper/run-wallpaper.sh
 
 # give exec permissions to the script
 chmod +x $location
