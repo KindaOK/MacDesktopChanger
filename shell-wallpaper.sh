@@ -2,10 +2,6 @@
 set -Eeuo pipefail
 set -x
 
-# run proxy stuff. This doesn't work, but it should
-# source /usr/local/cof/bin/cofproxy
-# cofproxy dev
-
 if [ ! -f subreddits.txt ]; then
     exit "Could not find subreddit configuration file"
 fi
@@ -25,7 +21,7 @@ fi
 
 # since all preview images are served from preview.reddit.com, we don't match anything that looks like that
 image_url=$(echo "$json" | LC_CTYPE=C sed -nr 's|.*"url": "(https://[^p][^"]+)".*|\1|pg')
-# image_url=${image_url%?}
+
 echo "\n\n\n"
 echo $image_url
 filename=$(echo "$image_url" | sed -nr 's/.+\/(.+)$/\1/p')
