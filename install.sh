@@ -18,7 +18,8 @@ curl -fsSL https://raw.githubusercontent.com/KindaOK/MacDesktopChanger/master/sh
 curl -fsSL https://raw.githubusercontent.com/KindaOK/MacDesktopChanger/master/run-wallpaper.sh > ~/wallpaper/run-wallpaper.sh
 
 # give exec permissions to the script
-chmod +x $location
+chmod +x ~/wallpaper/shell-wallpaper.sh
+chmod +x ~/wallpaper/run-wallpaper.sh
 
 # add cron job (not a good way but it works)
-echo "* */4 * * * .$(location)" | crontab
+echo "* */4 * * * .$(location)" | crontab# default is 4 times a day
