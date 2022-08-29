@@ -10,7 +10,7 @@ if [ ! -f subreddits.txt ]; then
     exit "Could not find subreddit configuration file"
 fi
 
-subreddit=$(shuf -n 1 subreddits.txt)
+subreddit=$(cat subreddits.txt | sort -R | head -n 1)
 
 if [ -z "$subreddit" ]; then
     exit "No subreddits on configuration file"
