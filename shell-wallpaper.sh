@@ -20,11 +20,11 @@ if echo "$json" | egrep -q -E '"post_hint": ?"[^i][^m][^"]+"'; then
 fi
 
 # since all preview images are served from preview.reddit.com, we don't match anything that looks like that
-image_url=$(echo "$json" | LC_CTYPE=C sed -nr 's|.*"url": "(https://[^p][^"]+)".*|\1|pg')
+image_url=$(echo "$json" | LC_CTYPE=C sed -nE 's|.*"url": "(https://[^p][^"]+)".*|\1|pg')
 
 echo "\n\n\n"
 echo $image_url
-filename=$(echo "$image_url" | sed -nr 's/.+\/(.+)$/\1/p')
+filename=$(echo "$image_url" | sed -nE 's/.+\/(.+)$/\1/p')
 
 curl $image_url > "wallpapers/$filename"
 
