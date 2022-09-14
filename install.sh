@@ -22,4 +22,7 @@ chmod +x ~/wallpaper/shell-wallpaper.sh
 chmod +x ~/wallpaper/run-wallpaper.sh
 
 # add cron job (not a good way but it works)
-echo "* */4 * * * .$(location)" | crontab# default is 4 times a day
+
+# default is 4 times a day to ensure that it will run at least once
+#   we should switch to launchd or something though
+(crontab -l; echo "0 */4 * * * $(location)") | crontab -
