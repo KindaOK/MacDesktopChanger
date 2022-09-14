@@ -1,4 +1,6 @@
+# MacOS Desktop Background Changer
 
+Pull images from top daily posts in subreddits given in `~/wallpaper/subreddits.txt`. Will not change the background if the top post is not an image.
 
 ## Getting Started
 
@@ -9,6 +11,10 @@
 
 ### Basic Installation
 `$ curl -fsSL https://github.com/KindaOK/MacDesktopChanger/raw/master/install.sh`
+
+### Configuration
+To add additional subreddits to the rotation, simply add the name of each on a separate line in `subreddits.txt`.
+The sample subreddits are r/surrealmemes and r/programmingmemes.
 
 
 ## TODO
